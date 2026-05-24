@@ -15,10 +15,6 @@ export default function Restaurant() {
   const [activeCategory, setActiveCategory] = useState(null);
   const categorySectionRefs = useRef({});
 
-  const cartRestaurantId = useCartStore((state) => state.restaurantId);
-  const setCartRestaurant = useCartStore((state) => state.setRestaurant);
-  const clearCart = useCartStore((state) => state.clearCart);
-
   useEffect(() => {
     const fetchRestaurant = async () => {
       try {
@@ -30,6 +26,8 @@ export default function Restaurant() {
           setActiveCategory(data.categories[0].id);
         }
 
+        const { restaurantId: cartRestaurantId, clearCart, setRestaurant: setCartRestaurant } =
+          useCartStore.getState();
         if (cartRestaurantId && cartRestaurantId !== id) {
           clearCart();
         }
@@ -44,7 +42,7 @@ export default function Restaurant() {
     };
 
     fetchRestaurant();
-  }, [id, cartRestaurantId, setCartRestaurant, clearCart]);
+  }, [id]);
 
   const handleCategorySelect = (categoryId) => {
     setActiveCategory(categoryId);
