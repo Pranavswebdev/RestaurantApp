@@ -30,6 +30,9 @@ export default function Restaurant() {
           setActiveCategory(data.categories[0].id);
         }
 
+        if (cartRestaurantId && cartRestaurantId !== id) {
+          clearCart();
+        }
         if (cartRestaurantId !== id) {
           setCartRestaurant(id);
         }
@@ -41,7 +44,7 @@ export default function Restaurant() {
     };
 
     fetchRestaurant();
-  }, [id, cartRestaurantId, setCartRestaurant]);
+  }, [id, cartRestaurantId, setCartRestaurant, clearCart]);
 
   const handleCategorySelect = (categoryId) => {
     setActiveCategory(categoryId);

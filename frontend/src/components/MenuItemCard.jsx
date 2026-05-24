@@ -19,7 +19,10 @@ export default function MenuItemCard({ item }) {
   };
 
   return (
-    <div className="flex gap-4 py-4 border-b border-gray-200">
+    <div
+      className="flex gap-4 py-4 border-b border-gray-200"
+      data-testid={`menu-item-${item.id}`}
+    >
       <div className="flex-1">
         <div className="flex items-start gap-2 mb-1">
           <div
@@ -39,6 +42,8 @@ export default function MenuItemCard({ item }) {
             <div className="flex items-center gap-2">
               <button
                 onClick={handleRemoveClick}
+                data-testid={`remove-${item.id}`}
+                aria-label={`Remove ${item.name}`}
                 className={`px-3 py-1 rounded font-semibold transition-colors ${
                   itemQuantity > 0
                     ? 'bg-red-500 text-white hover:bg-red-600'
@@ -48,12 +53,17 @@ export default function MenuItemCard({ item }) {
                 −
               </button>
               {itemQuantity > 0 && (
-                <span className="font-semibold text-gray-900 w-6 text-center">
+                <span
+                  className="font-semibold text-gray-900 w-6 text-center"
+                  data-testid={`qty-${item.id}`}
+                >
                   {itemQuantity}
                 </span>
               )}
               <button
                 onClick={handleAddClick}
+                data-testid={`add-${item.id}`}
+                aria-label={`Add ${item.name}`}
                 className="px-3 py-1 bg-indigo-500 text-white rounded font-semibold hover:bg-indigo-600 transition-colors"
               >
                 +
