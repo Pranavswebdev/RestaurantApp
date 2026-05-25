@@ -12,9 +12,7 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-const renderWithRouter = (ui) => {
-  return render(<MemoryRouter>{ui}</MemoryRouter>);
-};
+const renderWithRouter = (ui) => render(<MemoryRouter>{ui}</MemoryRouter>);
 
 describe('RestaurantCard', () => {
   const mockRestaurant = {
@@ -36,25 +34,23 @@ describe('RestaurantCard', () => {
 
   it('renders restaurant cuisines', () => {
     renderWithRouter(<RestaurantCard restaurant={mockRestaurant} />);
-    expect(screen.getByText('Italian')).toBeInTheDocument();
-    expect(screen.getByText('Pizza')).toBeInTheDocument();
+    expect(screen.getByText('Italian · Pizza')).toBeInTheDocument();
   });
 
   it('renders rating and delivery time', () => {
     renderWithRouter(<RestaurantCard restaurant={mockRestaurant} />);
     expect(screen.getByText('4.5')).toBeInTheDocument();
-    expect(screen.getByText('25 min')).toBeInTheDocument();
+    expect(screen.getByText(/25 min/)).toBeInTheDocument();
   });
 
   it('renders min order and delivery charge', () => {
     renderWithRouter(<RestaurantCard restaurant={mockRestaurant} />);
-    expect(screen.getByText(/Min order: ₹200/)).toBeInTheDocument();
-    expect(screen.getByText(/Delivery: ₹50/)).toBeInTheDocument();
+    expect(screen.getByText(/₹200 min order/)).toBeInTheDocument();
+    expect(screen.getByText(/Delivery ₹50/)).toBeInTheDocument();
   });
 
   it('shows "Closed" badge when restaurant is closed', () => {
-    const closedRestaurant = { ...mockRestaurant, isOpen: false };
-    renderWithRouter(<RestaurantCard restaurant={closedRestaurant} />);
+    renderWithRouter(<RestaurantCard restaurant={{ ...mockRestaurant, isOpen: false }} />);
     expect(screen.getByText('Closed')).toBeInTheDocument();
   });
 

@@ -11,15 +11,15 @@ describe('CuisineChip', () => {
   it('applies selected styling when isSelected is true', () => {
     render(<CuisineChip label="Pizza" isSelected={true} onClick={() => {}} />);
     const button = screen.getByText('Pizza');
-    expect(button.className).toContain('bg-indigo-500');
-    expect(button.className).toContain('text-white');
+    expect(button.className).toContain('bg-ink');
+    expect(button.className).toContain('text-cream');
   });
 
   it('applies unselected styling when isSelected is false', () => {
     render(<CuisineChip label="Pizza" isSelected={false} onClick={() => {}} />);
     const button = screen.getByText('Pizza');
-    expect(button.className).toContain('bg-gray-100');
-    expect(button.className).toContain('text-gray-700');
+    expect(button.className).toContain('bg-cream');
+    expect(button.className).toContain('text-ink');
   });
 
   it('calls onClick when clicked', () => {

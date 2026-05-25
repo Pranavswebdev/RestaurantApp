@@ -17,11 +17,7 @@ export const verifyOtp = async (phone, otp) => {
 };
 
 export const testLogin = async () => {
-  const testPhone = '+919876543210';
-  const response = await api.post('/api/v1/auth/verify-otp', {
-    phone: testPhone,
-    otp: '123456'
-  });
+  const response = await api.post('/api/v1/auth/test-login');
   return response.data;
 };
 

@@ -8,6 +8,18 @@ import BottomNav from '../components/BottomNav';
 
 const CUISINES = ['All', 'Italian', 'Pizza', 'American', 'Burgers', 'Indian', 'Biryani', 'Chinese', 'Healthy', 'Salads', 'Mexican', 'Japanese', 'Sushi', 'Thai', 'Mediterranean', 'Greek', 'Desserts', 'Bakery'];
 
+const OFFERS = [
+  { title: '50% OFF', sub: 'up to ₹100 on first order', code: 'CODE: FRESH50', glyph: '🎉', grad: 'from-orange-500 to-red-500' },
+  { title: 'Free Delivery', sub: 'on orders above ₹199', code: 'NO CODE NEEDED', glyph: '🚚', grad: 'from-green-500 to-teal-500' },
+  { title: '₹125 OFF', sub: 'pay with UPI', code: 'CODE: UPI125', glyph: '💳', grad: 'from-indigo-500 to-purple-500' },
+];
+
+const FEATURES = [
+  { label: 'Fast Delivery', glyph: '⚡' },
+  { label: 'Live Tracking', glyph: '📍' },
+  { label: 'Best Prices', glyph: '💰' },
+];
+
 export default function Home() {
   const navigate = useNavigate();
   const logout = useAuthStore((state) => state.logout);
@@ -90,15 +102,43 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-white pt-8 pb-6">
+      <section className="bg-white pt-6 pb-4">
         <div className="mx-auto max-w-7xl px-5">
-          <h2 className="text-sm font-bold text-orange-600 uppercase tracking-widest mb-2">Welcome to</h2>
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-2">
-            The neighbourhood,
+          <h2 className="text-xs font-bold text-orange-600 uppercase tracking-widest mb-1">Welcome to</h2>
+          <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">
+            The neighbourhood, <span className="text-orange-600">delivered hot.</span>
           </h1>
-          <h1 className="font-display text-4xl sm:text-5xl font-bold text-orange-600 leading-tight">
-            delivered hot.
-          </h1>
+        </div>
+      </section>
+
+      {/* Offer banners */}
+      <section className="bg-white pb-4">
+        <div className="no-scrollbar mx-auto flex max-w-7xl gap-3 overflow-x-auto px-5">
+          {OFFERS.map((o) => (
+            <div
+              key={o.title}
+              className={`flex min-w-[260px] items-center gap-3 rounded-2xl bg-gradient-to-br ${o.grad} p-4 text-white shadow-md`}
+            >
+              <span className="text-4xl">{o.glyph}</span>
+              <div>
+                <p className="text-lg font-extrabold leading-tight">{o.title}</p>
+                <p className="text-sm font-medium text-white/90">{o.sub}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-wide text-white/70">{o.code}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Feature highlights */}
+      <section className="bg-white pb-2">
+        <div className="mx-auto grid max-w-7xl grid-cols-3 gap-3 px-5">
+          {FEATURES.map((f) => (
+            <div key={f.label} className="rounded-2xl bg-orange-50 p-3 text-center">
+              <div className="text-2xl">{f.glyph}</div>
+              <p className="mt-1 text-xs font-semibold text-gray-700">{f.label}</p>
+            </div>
+          ))}
         </div>
       </section>
 

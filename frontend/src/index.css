@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Playfair Display", serif;
-  --font-sans: "Poppins", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 
   --color-primary: #FF6B35;
   --color-primary-dark: #E85A24;
@@ -72,7 +72,7 @@ body {
 .animate-pop  { animation: pop 0.25s ease both; }
 
 .skeleton {
-  background: linear-gradient(100deg, #e7e3f7 30%, #f1eefb 50%, #e7e3f7 70%);
+  background: linear-gradient(100deg, #ececec 30%, #f6f6f6 50%, #ececec 70%);
   background-size: 200% 100%;
   animation: shimmer 1.4s infinite;
 }

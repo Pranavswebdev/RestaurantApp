@@ -7,24 +7,15 @@ export default function Splash() {
   const token = useAuthStore((state) => state.token);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (token) {
-        navigate('/home');
-      } else {
-        navigate('/login');
-      }
-    }, 2000);
-
+    const timer = setTimeout(() => navigate(token ? '/home' : '/login'), 1800);
     return () => clearTimeout(timer);
   }, [token, navigate]);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-b from-indigo-500 to-purple-500">
-      <div className="text-center">
-        <div className="text-6xl font-bold text-white mb-4">🍽️</div>
-        <h1 className="text-4xl font-bold text-white mb-2">FoodRush</h1>
-        <p className="text-white text-lg">Food delivered to your door</p>
-      </div>
+    <div className="brand-gradient flex h-screen flex-col items-center justify-center gap-3">
+      <div className="animate-fade text-6xl">⚡🍔</div>
+      <h1 className="animate-rise text-4xl font-extrabold tracking-tight text-white">FoodRush</h1>
+      <p className="animate-fade text-sm text-white/80">Lightning fast food delivery</p>
     </div>
   );
 }

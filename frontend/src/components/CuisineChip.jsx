@@ -2,10 +2,10 @@ export default function CuisineChip({ label, isSelected, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2 rounded-full font-medium transition-colors whitespace-nowrap ${
+      className={`flex-shrink-0 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all ${
         isSelected
-          ? 'bg-indigo-500 text-white'
-          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          ? 'bg-primary text-white border-primary'
+          : 'bg-surface text-meta border-line hover:border-primary'
       }`}
     >
       {label}
