@@ -34,12 +34,6 @@
   --grad-asian: linear-gradient(135deg, #009FFD 0%, #2A2A72 100%);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html, body, #root {
   min-height: 100%;
   width: 100%;
