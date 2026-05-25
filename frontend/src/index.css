@@ -124,3 +124,95 @@ body {
 
 .font-display { font-family: var(--font-display); }
 .gradient-text { background: linear-gradient(135deg, #FF6B35, #F7931E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* FoodRush Heading Animations */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes float-cap {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+.animate-pulse-fork {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float-cap {
+  animation: float-cap 3s ease-in-out infinite;
+}
+
+.heading-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fork-emoji {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.text-container {
+  position: relative;
+  display: inline-block;
+}
+
+.brand-text {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chef-hat {
+  position: absolute;
+  top: -16px;
+  right: -8px;
+  font-size: 28px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .heading-container {
+    gap: 8px;
+  }
+
+  .fork-emoji {
+    font-size: 28px;
+  }
+
+  .brand-text {
+    font-size: 20px;
+  }
+
+  .chef-hat {
+    font-size: 20px;
+    top: -12px;
+    right: -6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .heading-container {
+    gap: 6px;
+  }
+
+  .fork-emoji {
+    font-size: 24px;
+  }
+
+  .brand-text {
+    font-size: 18px;
+  }
+
+  .chef-hat {
+    font-size: 18px;
+    top: -10px;
+    right: -4px;
+  }
+}
