@@ -4,6 +4,8 @@ import Login from './pages/Login';
 import OTPVerify from './pages/OTPVerify';
 import Home from './pages/Home';
 import Restaurant from './pages/Restaurant';
+import Orders from './pages/Orders';
+import Profile from './pages/Profile';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -26,6 +28,22 @@ function App() {
           element={
             <ProtectedRoute>
               <Restaurant />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <Orders />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
             </ProtectedRoute>
           }
         />
