@@ -132,7 +132,7 @@ body {
 }
 
 @keyframes float-cap {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  0%, 100% { transform: translateY(0px) rotate(-5deg); }
   50% { transform: translateY(-4px) rotate(5deg); }
 }
 
