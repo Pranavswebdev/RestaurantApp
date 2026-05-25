@@ -26,11 +26,16 @@ DEV (Development)
 - **Notes**: Service is configured with auto-deploy enabled. Manual deployments can be triggered via the Render API.
 
 ### 3. Vercel
-- **Status**: ⚠ Token Authorization Failed
+- **Status**: ✓ Deployed
 - **Configuration**: vercel.json
-- **Issue**: The VERCEL_TOKEN environment variable failed authorization
-- **Action Required**: Verify token validity or generate a new token from Vercel dashboard
-- **Notes**: vercel.json is configured and ready for deployment once valid credentials are provided
+- **Deployment URL**: https://backend-fu0z78fm2-webappdevs-projects.vercel.app
+- **Alias**: https://backend-webappdevs-projects.vercel.app
+- **Deployment ID**: dpl_9rpmDxBU1B9vADc6vzRop1JFhvSw
+- **Build Time**: 11 seconds
+- **Environment**: DEV/Preview
+- **Project**: webappdevs-projects/backend
+- **Dashboard**: https://vercel.com/webappdevs-projects/backend/9rpmDxBU1B9vADc6vzRop1JFhvSw
+- **Notes**: Successfully deployed to Vercel preview environment with full Node.js/Express stack
 
 ### 4. MongoDB Atlas
 - **Status**: ✓ Verified
