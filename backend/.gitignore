@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+
+# Environment
+.env
+.env.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Lint artifacts
+eslint-output.json
+eslint-results.json
+eslint-summary.json
+
+# OS
+.DS_Store
