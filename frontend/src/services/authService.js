@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -13,6 +13,15 @@ export const sendOtp = async (phone) => {
 
 export const verifyOtp = async (phone, otp) => {
   const response = await api.post('/api/v1/auth/verify-otp', { phone, otp });
+  return response.data;
+};
+
+export const testLogin = async () => {
+  const testPhone = '+919876543210';
+  const response = await api.post('/api/v1/auth/verify-otp', {
+    phone: testPhone,
+    otp: '123456'
+  });
   return response.data;
 };
 

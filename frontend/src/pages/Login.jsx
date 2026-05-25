@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { sendOtp } from '../services/authService';
+import { sendOtp, testLogin } from '../services/authService';
+import useAuthStore from '../stores/authStore';
 
 export default function Login() {
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const login = useAuthStore((state) => state.login);
 
   const validatePhone = (value) => {
     const phoneRegex = /^[6-9]\d{9}$/;
@@ -33,6 +35,20 @@ export default function Login() {
       navigate('/otp', { state: { phone: `+91${phone}` } });
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to send OTP');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleTestLogin = async () => {
+    setLoading(true);
+    setError('');
+    try {
+      const response = await testLogin();
+      login(response.token, response.user);
+      navigate('/home');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Test login failed');
     } finally {
       setLoading(false);
     }
@@ -80,6 +96,19 @@ export default function Login() {
           <p className="text-center text-gray-600 text-sm mt-6">
             We'll send a 6-digit code to verify your phone
           </p>
+
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <p className="text-center text-gray-600 text-xs mb-3">
+              ⚡ Testing? Use quick access:
+            </p>
+            <button
+              onClick={handleTestLogin}
+              disabled={loading}
+              className="w-full bg-green-500 hover:bg-green-600 disabled:bg-gray-300 text-white font-bold py-2 rounded-lg transition text-sm"
+            >
+              {loading ? 'Logging in...' : 'Test Login (+91 9876543210)'}
+            </button>
+          </div>
         </div>
       </div>
     </div>
