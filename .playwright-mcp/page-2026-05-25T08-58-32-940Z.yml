@@ -1,0 +1,50 @@
+- generic [ref=e67]:
+  - banner [ref=e68]:
+    - button "←" [ref=e69]
+    - heading "Checkout" [level=1] [ref=e70]
+  - generic [ref=e71]:
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - heading "📍 Delivery Address" [level=2] [ref=e74]
+        - button "Change" [ref=e75]
+      - generic [ref=e76]:
+        - paragraph [ref=e77]: Home
+        - paragraph [ref=e78]: 42, MG Road, Indiranagar
+        - paragraph [ref=e79]: Bengaluru 560038
+    - generic [ref=e80]:
+      - heading "💳 Payment Method" [level=2] [ref=e81]
+      - generic [ref=e82]:
+        - button "📱 UPI Pay via any UPI app" [ref=e83]:
+          - generic [ref=e84]: 📱
+          - generic [ref=e85]:
+            - generic [ref=e86]: UPI
+            - generic [ref=e87]: Pay via any UPI app
+        - button "💳 Credit / Debit Card Visa, Mastercard, RuPay" [ref=e90]:
+          - generic [ref=e91]: 💳
+          - generic [ref=e92]:
+            - generic [ref=e93]: Credit / Debit Card
+            - generic [ref=e94]: Visa, Mastercard, RuPay
+        - button "💵 Cash on Delivery Pay when it arrives" [ref=e96]:
+          - generic [ref=e97]: 💵
+          - generic [ref=e98]:
+            - generic [ref=e99]: Cash on Delivery
+            - generic [ref=e100]: Pay when it arrives
+    - generic [ref=e102]:
+      - heading "🧾 Bill Details" [level=2] [ref=e103]
+      - generic [ref=e104]:
+        - generic [ref=e105]: Item total (3 items)
+        - generic [ref=e106]: ₹1076
+      - generic [ref=e107]:
+        - generic [ref=e108]: Delivery fee
+        - generic [ref=e109]: ₹40
+      - generic [ref=e110]:
+        - generic [ref=e111]: Taxes & charges
+        - generic [ref=e112]: ₹54
+      - generic [ref=e113]:
+        - generic [ref=e114]: To Pay
+        - generic [ref=e115]: ₹1170
+  - generic [ref=e117]:
+    - generic [ref=e118]:
+      - paragraph [ref=e119]: To Pay
+      - paragraph [ref=e120]: ₹1170
+    - button "Place Order · ₹1170" [ref=e121]

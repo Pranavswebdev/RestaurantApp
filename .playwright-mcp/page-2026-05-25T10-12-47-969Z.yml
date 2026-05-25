@@ -1,0 +1,41 @@
+- generic [ref=e2]:
+  - heading "FoodRush Heading Designs" [level=1] [ref=e3]
+  - paragraph [ref=e4]: "Explore different heading styles. Click any option to select it. The goal: make it more attractive and less empty on desktop while keeping mobile clean."
+  - generic [ref=e5]:
+    - generic [ref=e6] [cursor=pointer]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: 🍽️
+        - generic [ref=e10]: FoodRush
+      - generic [ref=e11]: "Option 1: Minimal (Current)"
+      - generic [ref=e12]: Simple, clean approach with emoji and text. Works great on mobile but feels a bit empty on desktop.
+    - generic [ref=e13] [cursor=pointer]:
+      - generic [ref=e15]: FoodRush
+      - generic [ref=e16]: "Option 2: Bold Gradient"
+      - generic [ref=e17]: Large, bold text with orange-to-gold gradient. Modern, eye-catching, fills the space on desktop.
+    - generic [ref=e18] [cursor=pointer]:
+      - generic [ref=e20]: FoodRush
+      - generic [ref=e21]: "Option 3: Accent First Letter"
+      - generic [ref=e22]: First letter emphasized with larger size and orange color. Subtle, sophisticated approach.
+    - generic [ref=e23] [cursor=pointer]:
+      - generic [ref=e25]: 🍽️ FoodRush
+      - generic [ref=e26]: "Option 4: Gradient + Icon"
+      - generic [ref=e27]: Gradient text with animated fork emoji before it. Rich visual, maintains emoji charm.
+    - generic [ref=e28] [cursor=pointer]:
+      - generic [ref=e30]:
+        - generic [ref=e31]: 🍽️
+        - generic [ref=e32]: FoodRush
+      - generic [ref=e33]: "Option 5: Icon with Gradient Text"
+      - generic [ref=e34]: Larger icon with pulsing animation + gradient text. Bold and dynamic, great for desktop.
+    - generic [ref=e35] [cursor=pointer]:
+      - generic [ref=e37]: FoodRush
+      - generic [ref=e38]: "Option 6: Shimmering Gradient"
+      - generic [ref=e39]: Bold, extra-large with animated gradient flow. Premium feel, very eye-catching on desktop.
+    - generic [ref=e40] [cursor=pointer]:
+      - generic [ref=e42]:
+        - generic [ref=e43]: 🍽️
+        - generic [ref=e44]: FoodRush
+      - generic [ref=e45]: "Option 7: Stacked Icon + Two-Tone"
+      - generic [ref=e46]: Icon on left, text split into two colors. Playful, modern, desktop-friendly layout.
+  - paragraph [ref=e48]:
+    - strong [ref=e49]: "Note:"
+    - text: These are desktop mockups. Mobile will show a simpler version (just emoji + text on a single line in header).

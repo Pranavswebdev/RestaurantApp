@@ -63,9 +63,12 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-gray-200 bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="mx-auto max-w-7xl px-5 py-4">
           <div className="flex items-center justify-between mb-5">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl animate-float">🍽️</span>
-              <h1 className="font-display text-2xl font-bold text-gray-900">FoodRush</h1>
+            <div className="heading-container">
+              <span className="fork-emoji animate-pulse-fork">🍽️</span>
+              <div className="text-container">
+                <h1 className="brand-text">FoodRush</h1>
+                <span className="chef-hat animate-float-cap">👨‍🍳</span>
+              </div>
             </div>
             <button
               onClick={handleLogout}

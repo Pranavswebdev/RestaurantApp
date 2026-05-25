@@ -1,0 +1,16 @@
+- generic [ref=e5]:
+  - generic [ref=e6]:
+    - generic [ref=e7]: 🍽️
+    - heading "FoodRush" [level=1] [ref=e8]
+    - paragraph [ref=e9]: Order food, delivered fast
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]: Phone Number
+      - generic [ref=e13]:
+        - generic [ref=e14]: "+91"
+        - textbox "Enter 10-digit number" [ref=e15]
+    - button "Get OTP" [disabled] [ref=e16]
+  - paragraph [ref=e17]: We'll send a 6-digit code to verify your phone
+  - generic [ref=e18]:
+    - paragraph [ref=e19]: "⚡ Testing? Use quick access:"
+    - button "Test Login (+91 9876543210)" [ref=e20]

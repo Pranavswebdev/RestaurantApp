@@ -1,0 +1,43 @@
+- generic [ref=e2]:
+  - heading "Chef Cap Position Variants" [level=1] [ref=e3]
+  - paragraph [ref=e4]: Pick which position you like best for the chef cap. Each has different visual weight and personality.
+  - generic [ref=e5]:
+    - generic [ref=e6] [cursor=pointer]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: 🍽️
+        - generic [ref=e10]:
+          - text: FoodRush
+          - generic [ref=e11]: 👨‍🍳
+      - generic [ref=e12]: "Variant A: Cap Top Right"
+      - generic [ref=e13]: Chef hat floats above the top-right corner. Playful, slightly rotates. Classic placement.
+    - generic [ref=e14] [cursor=pointer]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: 🍽️
+        - generic [ref=e18]:
+          - text: FoodRush
+          - generic [ref=e19]: 👨‍🍳
+      - generic [ref=e20]: "Variant B: Cap Top Left"
+      - generic [ref=e21]: Chef hat on the left side, tilts and floats. Mirrors the fork emoji position.
+    - generic [ref=e22] [cursor=pointer]:
+      - generic [ref=e24]:
+        - generic [ref=e25]: 🍽️
+        - generic [ref=e26]:
+          - text: FoodRush
+          - generic [ref=e27]: 👨‍🍳
+      - generic [ref=e28]: "Variant C: Floating High"
+      - generic [ref=e29]: Chef hat floats higher and more prominently. Bold, takes up more visual space.
+    - generic [ref=e30] [cursor=pointer]:
+      - generic [ref=e32]:
+        - generic [ref=e33]: 🍽️
+        - generic [ref=e34]:
+          - generic [ref=e35]: 👨‍🍳
+          - generic [ref=e36]: FoodRush
+      - generic [ref=e37]: "Variant D: Integrated (Before Text)"
+      - generic [ref=e38]: Chef hat sits inline before the text. Integrated, no floating. Clean, compact.
+  - generic [ref=e39]:
+    - paragraph [ref=e40]:
+      - strong [ref=e41]: "Desktop:"
+      - text: Full icon + gradient text + chef cap animation
+    - paragraph [ref=e42]:
+      - strong [ref=e43]: "Mobile:"
+      - text: All elements scale down proportionally on smaller screens, staying on one line until very small screens.

@@ -5,6 +5,7 @@ const authRoutes = require('./src/routes/authRoutes');
 const restaurantRoutes = require('./src/routes/restaurantRoutes');
 const orderRoutes = require('./src/routes/orderRoutes');
 const profileRoutes = require('./src/routes/profileRoutes');
+const adminRoutes = require('./src/routes/adminRoutes');
 
 const app = express();
 
@@ -22,5 +23,6 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/restaurants', restaurantRoutes);
 app.use('/api/v1/orders', orderRoutes);
 app.use('/api/v1/profile', profileRoutes);
+app.use('/api/v1/admin', adminRoutes);
 
 module.exports = app;
