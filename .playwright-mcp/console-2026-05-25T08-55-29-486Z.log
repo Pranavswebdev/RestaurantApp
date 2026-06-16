@@ -1,0 +1,7 @@
+[    1094ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5180/node_modules/.vite/deps/react-dom_client.js?v=6e3ac60d:14337
+[    9671ms] [ERROR] Access to XMLHttpRequest at 'https://backend-webappdevs-projects.vercel.app/api/v1/auth/test-login' from origin 'http://localhost:5180' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5180/login:0
+[    9672ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://backend-webappdevs-projects.vercel.app/api/v1/auth/test-login:0
+[   55936ms] [ERROR] Access to fetch at 'https://backend-webappdevs-projects.vercel.app/api/v1/restaurants' from origin 'http://localhost:5180' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5180/login:0
+[   55937ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://backend-webappdevs-projects.vercel.app/api/v1/restaurants:0
+[   96131ms] [ERROR] Access to XMLHttpRequest at 'https://backend-webappdevs-projects.vercel.app/api/v1/auth/test-login' from origin 'http://localhost:5180' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5180/login:0
+[   96132ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://backend-webappdevs-projects.vercel.app/api/v1/auth/test-login:0

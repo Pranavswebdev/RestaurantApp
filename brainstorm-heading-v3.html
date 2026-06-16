@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodRush Design Customization</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 { margin-bottom: 10px; color: #333; font-size: 28px; }
+    h2 { margin-top: 40px; margin-bottom: 20px; color: #333; font-size: 20px; font-weight: 600; }
+    .intro { color: #666; margin-bottom: 20px; font-size: 16px; }
+    .section { margin-bottom: 50px; }
+    .designs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+    .design-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 3px solid #e0e0e0;
+    }
+    .design-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .design-card.selected {
+      border-color: #FF6B35;
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+    .preview {
+      background: white;
+      padding: 40px 30px;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .label {
+      padding: 10px 16px;
+      background: #f9f9f9;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #FF6B35;
+    }
+    .description {
+      padding: 14px 16px;
+      color: #666;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* Base Styles */
+    .heading-demo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 28px;
+      font-weight: 700;
+      position: relative;
+    }
+    .heading-demo .fork {
+      font-size: 36px;
+      animation: pulse-icon 2s ease-in-out infinite;
+    }
+    .heading-demo .text {
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      position: relative;
+    }
+    .heading-demo .chef {
+      position: absolute;
+      top: -16px;
+      right: -8px;
+      font-size: 28px;
+      animation: float-cap 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-icon { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+    @keyframes float-cap { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-4px) rotate(5deg); } }
+
+    /* ANIMATION SPEED VARIANTS */
+    .pulse-slow { animation: pulse-slow 3s ease-in-out infinite !important; }
+    .pulse-fast { animation: pulse-fast 1s ease-in-out infinite !important; }
+    .pulse-medium { animation: pulse-icon 2s ease-in-out infinite !important; }
+    @keyframes pulse-slow { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+    @keyframes pulse-fast { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+
+    .cap-slow { animation: float-cap-slow 4s ease-in-out infinite !important; }
+    .cap-fast { animation: float-cap-fast 2s ease-in-out infinite !important; }
+    @keyframes float-cap-slow { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-6px) rotate(5deg); } }
+    @keyframes float-cap-fast { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-2px) rotate(5deg); } }
+
+    /* EMOJI VARIANTS */
+    .emoji-chef { /* 👨‍🍳 */ }
+    .emoji-hat { /* 🎩 */ }
+    .emoji-crown { /* 👑 */ }
+    .emoji-fire { /* 🔥 */ }
+
+    /* SIZE VARIANTS */
+    .size-compact .fork { font-size: 32px; }
+    .size-compact .text { font-size: 24px; }
+    .size-compact .chef { font-size: 24px; }
+
+    .size-large .fork { font-size: 40px; }
+    .size-large .text { font-size: 32px; }
+    .size-large .chef { font-size: 32px; }
+
+    .size-xl .fork { font-size: 44px; }
+    .size-xl .text { font-size: 36px; }
+    .size-xl .chef { font-size: 36px; }
+
+    /* COLOR VARIANTS */
+    .color-orange .text {
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .color-warm .text {
+      background: linear-gradient(135deg, #FF6B35, #FF8C42);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .color-sunset .text {
+      background: linear-gradient(135deg, #FF6B35, #FF4500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .color-gradient .text {
+      background: linear-gradient(90deg, #FF6B35, #F7931E, #FF6B35);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 100%;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 0%; }
+      50% { background-position: 100% 0%; }
+    }
+
+    .spacing-tight { gap: 8px !important; }
+    .spacing-normal { gap: 12px !important; }
+    .spacing-loose { gap: 16px !important; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FoodRush Design Customization</h1>
+    <p class="intro">Explore variations. Click to select your preferred option in each category.</p>
+
+    <!-- ANIMATION SPEED -->
+    <div class="section">
+      <h2>⚡ Animation Speed (Fork Pulse + Chef Cap Float)</h2>
+      <div class="designs">
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-slow">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef cap-slow">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Slow (3s + 4s)</div>
+          <div class="description">Gentle, luxurious feel. Elegant, premium vibe.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Medium (2s + 3s) ⭐</div>
+          <div class="description">Balanced, natural feel. Recommended default.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-fast">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef cap-fast">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Fast (1s + 2s)</div>
+          <div class="description">Energetic, playful. More lively feel.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIZE -->
+    <div class="section">
+      <h2>📏 Overall Size</h2>
+      <div class="designs">
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium size-compact">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Compact</div>
+          <div class="description">Smaller, fits tight spaces. Good for mobile headers.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Standard (Current) ⭐</div>
+          <div class="description">Balanced, fills space nicely on desktop.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium size-large">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Large</div>
+          <div class="description">Bold, takes up more visual presence.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium size-xl">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Extra Large</div>
+          <div class="description">Hero-sized, very prominent. May need spacing adjustment.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHEF CAP EMOJI -->
+    <div class="section">
+      <h2>👨‍🍳 Chef Cap Emoji Choice</h2>
+      <div class="designs">
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef emoji-chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Chef (Current) ⭐</div>
+          <div class="description">Full person emoji. Playful, friendly, food-authentic.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef emoji-hat">🎩</span></div>
+            </div>
+          </div>
+          <div class="label">Hat Only</div>
+          <div class="description">Just the hat. More elegant, sophisticated.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef emoji-crown">👑</span></div>
+            </div>
+          </div>
+          <div class="label">Crown</div>
+          <div class="description">Premium, prestigious vibe. "King of Food".</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef emoji-fire">🔥</span></div>
+            </div>
+          </div>
+          <div class="label">Fire</div>
+          <div class="description">Hot, fast-paced. "Spicy" delivery vibe.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEXT COLOR -->
+    <div class="section">
+      <h2>🎨 Text Color Gradient</h2>
+      <div class="designs">
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium color-orange">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Orange→Gold (Current) ⭐</div>
+          <div class="description">Warm, food-centric. Our brand colors.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium color-warm">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Warm Orange Blend</div>
+          <div class="description">More orange-focused. Vibrant and energetic.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium color-sunset">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Sunset (Orange→Red)</div>
+          <div class="description">Deeper, bolder. More appetite-stimulating.</div>
+        </div>
+
+        <div class="design-card" onclick="select(this)">
+          <div class="preview">
+            <div class="heading-demo pulse-medium color-gradient">
+              <span class="fork">🍽️</span>
+              <div class="text">FoodRush<span class="chef">👨‍🍳</span></div>
+            </div>
+          </div>
+          <div class="label">Animated Shimmer</div>
+          <div class="description">Gradient flows across text. Eye-catching luxury.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 60px; padding: 20px; background: #fff9f5; border-radius: 8px; color: #666;">
+      <p><strong>⭐ Recommended defaults:</strong> Medium animation speed + Standard size + Chef emoji + Orange→Gold gradient</p>
+      <p style="margin-top: 10px;">Pick one option from each category above, or let me know your full preference!</p>
+    </div>
+  </div>
+
+  <script>
+    function select(card) {
+      document.querySelectorAll('.design-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+  </script>
+</body>
+</html>

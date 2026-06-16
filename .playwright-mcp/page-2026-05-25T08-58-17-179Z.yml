@@ -1,0 +1,68 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - button "←" [ref=e5]
+    - heading "Your Cart" [level=1] [ref=e6]
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - img "Margherita" [ref=e10]
+        - generic [ref=e11]:
+          - paragraph [ref=e12]: Margherita
+          - paragraph [ref=e13]: ₹299
+        - generic [ref=e14]:
+          - button "−" [ref=e15]
+          - generic [ref=e16]: "2"
+          - button "+" [ref=e17]
+      - generic [ref=e18]:
+        - img "Pepperoni" [ref=e19]
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: Pepperoni
+          - paragraph [ref=e22]: ₹349
+        - generic [ref=e23]:
+          - button "−" [ref=e24]
+          - generic [ref=e25]: "1"
+          - button "+" [ref=e26]
+      - generic [ref=e27]:
+        - img "Garlic Bread" [ref=e28]
+        - generic [ref=e29]:
+          - paragraph [ref=e30]: Garlic Bread
+          - paragraph [ref=e31]: ₹129
+        - generic [ref=e32]:
+          - button "−" [ref=e33]
+          - generic [ref=e34]: "1"
+          - button "+" [ref=e35]
+    - generic [ref=e36]:
+      - heading "Bill Details" [level=2] [ref=e37]
+      - generic [ref=e38]:
+        - generic [ref=e39]: Item total
+        - generic [ref=e40]: ₹1076
+      - generic [ref=e41]:
+        - generic [ref=e42]: Delivery fee
+        - generic [ref=e43]: ₹40
+      - generic [ref=e44]:
+        - generic [ref=e45]: Taxes & charges
+        - generic [ref=e46]: ₹54
+      - generic [ref=e47]:
+        - generic [ref=e48]: To Pay
+        - generic [ref=e49]: ₹1170
+  - generic [ref=e51]:
+    - generic [ref=e52]:
+      - paragraph [ref=e53]: Total
+      - paragraph [ref=e54]: ₹1170
+    - button "Proceed to Checkout →" [ref=e55]
+  - navigation [ref=e56]:
+    - generic [ref=e57]:
+      - button "🏠 Home" [ref=e58]:
+        - generic [ref=e59]: 🏠
+        - text: Home
+      - button "🛒 4 Cart" [ref=e60]:
+        - generic [ref=e61]:
+          - text: 🛒
+          - generic [ref=e62]: "4"
+        - text: Cart
+      - button "📋 Orders" [ref=e63]:
+        - generic [ref=e64]: 📋
+        - text: Orders
+      - button "👤 Profile" [ref=e65]:
+        - generic [ref=e66]: 👤
+        - text: Profile

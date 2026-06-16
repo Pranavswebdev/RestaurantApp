@@ -1,0 +1,21 @@
+- generic [ref=e3]:
+  - generic [ref=e4]: 🍕
+  - generic [ref=e5]: 🍔
+  - generic [ref=e6]: 🍜
+  - generic [ref=e7]: 🍲
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]: 🍽️
+      - heading "FoodRush" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Order food, delivered fast.
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: Mobile number
+        - generic [ref=e18]:
+          - generic [ref=e19]: "+91"
+          - textbox "98765 43210" [ref=e20]
+        - paragraph [ref=e29]: Test login failed
+      - button "Get OTP" [disabled] [ref=e21]
+      - generic [ref=e24]: or
+      - button "⚡ Skip OTP — Test Login" [ref=e26]
+      - paragraph [ref=e27]: We'll text a 6-digit code to verify your number.

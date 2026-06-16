@@ -1,0 +1,78 @@
+- generic [ref=e245]:
+  - generic [ref=e246]:
+    - generic [ref=e248]: 🍝
+    - button "←" [ref=e250]
+  - generic [ref=e252]:
+    - generic [ref=e253]:
+      - heading "Pizza Paradise" [level=1] [ref=e254]
+      - generic [ref=e255]:
+        - generic [ref=e256]: ★
+        - generic [ref=e257]: "4.5"
+    - paragraph [ref=e258]: Italian · Pizza
+    - generic [ref=e259]:
+      - generic [ref=e260]:
+        - paragraph [ref=e261]: 25′
+        - paragraph [ref=e262]: delivery
+      - generic [ref=e263]:
+        - paragraph [ref=e264]: ₹50
+        - paragraph [ref=e265]: fee
+      - generic [ref=e266]:
+        - paragraph [ref=e267]: ₹200
+        - paragraph [ref=e268]: min order
+  - generic [ref=e271]:
+    - button "Pizzas" [ref=e272]
+    - button "Sides & Salads" [ref=e273]
+  - generic [ref=e274]:
+    - generic [ref=e275]:
+      - heading "Pizzas" [level=2] [ref=e276]
+      - generic [ref=e277]:
+        - generic [ref=e278]:
+          - generic [ref=e279]:
+            - heading "Margherita" [level=3] [ref=e283]
+            - paragraph [ref=e284]: Classic cheese pizza
+            - generic [ref=e285]: ₹299
+          - button "Add Margherita" [ref=e287]: ADD
+        - generic [ref=e288]:
+          - generic [ref=e289]:
+            - heading "Pepperoni" [level=3] [ref=e293]
+            - paragraph [ref=e294]: With pepperoni
+            - generic [ref=e295]: ₹349
+          - button "Add Pepperoni" [ref=e297]: ADD
+        - generic [ref=e298]:
+          - generic [ref=e299]:
+            - heading "Veggie Supreme" [level=3] [ref=e303]
+            - paragraph [ref=e304]: Loaded with vegetables
+            - generic [ref=e305]: ₹329
+          - button "Add Veggie Supreme" [ref=e307]: ADD
+        - generic [ref=e308]:
+          - generic [ref=e309]:
+            - heading "BBQ Chicken" [level=3] [ref=e313]
+            - paragraph [ref=e314]: Grilled chicken & BBQ sauce
+            - generic [ref=e315]: ₹379
+          - button "Add BBQ Chicken" [ref=e317]: ADD
+    - generic [ref=e318]:
+      - heading "Sides & Salads" [level=2] [ref=e319]
+      - generic [ref=e320]:
+        - generic [ref=e321]:
+          - generic [ref=e322]:
+            - heading "Garlic Bread" [level=3] [ref=e326]
+            - paragraph [ref=e327]: Crispy garlic bread
+            - generic [ref=e328]: ₹129
+          - button "Add Garlic Bread" [ref=e330]: ADD
+        - generic [ref=e331]:
+          - generic [ref=e332]:
+            - heading "Caesar Salad" [level=3] [ref=e336]
+            - paragraph [ref=e337]: Fresh greens with dressing
+            - generic [ref=e338]: ₹199
+          - button "Add Caesar Salad" [ref=e340]: ADD
+  - navigation [ref=e341]:
+    - generic [ref=e342]:
+      - button "🏠 Home" [ref=e343]:
+        - generic [ref=e344]: 🏠
+        - text: Home
+      - button "📋 Orders" [ref=e345]:
+        - generic [ref=e346]: 📋
+        - text: Orders
+      - button "👤 Profile" [ref=e347]:
+        - generic [ref=e348]: 👤
+        - text: Profile

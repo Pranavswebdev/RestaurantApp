@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodRush Heading Designs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { margin-bottom: 10px; color: #333; font-size: 28px; }
+    .intro { color: #666; margin-bottom: 40px; font-size: 16px; }
+    .designs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .design-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 3px solid #e0e0e0;
+    }
+    .design-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .design-card.selected {
+      border-color: #FF6B35;
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+    .preview {
+      background: white;
+      padding: 40px;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .label {
+      padding: 12px 16px;
+      background: #f9f9f9;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #FF6B35;
+    }
+    .description {
+      padding: 16px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* Design Option Styles */
+    .minimal { font-size: 24px; font-weight: bold; color: #1a1a1a; }
+    .minimal span { display: inline-flex; align-items: center; gap: 8px; }
+    .minimal emoji { font-size: 28px; animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+    .gradient {
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+
+    .styled {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(255, 107, 53, 0.1);
+    }
+    .styled::first-letter {
+      color: #FF6B35;
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    .decorative {
+      font-size: 30px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      display: inline-block;
+    }
+    .decorative::before {
+      content: "🍽️";
+      margin-right: 8px;
+      font-size: 32px;
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .bold-accent {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .bold-accent .emoji {
+      font-size: 36px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .bold-accent span {
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+    }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+    .featured {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FF6B35 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 0%; }
+      50% { background-position: 100% 0%; }
+    }
+
+    .fancy {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .fancy-text {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #1a1a1a;
+    }
+    .fancy-text span {
+      color: #FF6B35;
+    }
+    .fancy-icon {
+      font-size: 40px;
+      animation: bob 2.5s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .desktop-only {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .desktop-only {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FoodRush Heading Designs</h1>
+    <p class="intro">Explore different heading styles. Click any option to select it. The goal: make it more attractive and less empty on desktop while keeping mobile clean.</p>
+
+    <div class="designs">
+      <!-- Option 1: Minimal (Current) -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <span class="minimal">
+            <span class="emoji">🍽️</span>
+            <span>FoodRush</span>
+          </span>
+        </div>
+        <div class="label">Option 1: Minimal (Current)</div>
+        <div class="description">
+          Simple, clean approach with emoji and text. Works great on mobile but feels a bit empty on desktop.
+        </div>
+      </div>
+
+      <!-- Option 2: Gradient Text -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <span class="gradient">FoodRush</span>
+        </div>
+        <div class="label">Option 2: Bold Gradient</div>
+        <div class="description">
+          Large, bold text with orange-to-gold gradient. Modern, eye-catching, fills the space on desktop.
+        </div>
+      </div>
+
+      <!-- Option 3: First Letter Styled -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <span class="styled">FoodRush</span>
+        </div>
+        <div class="label">Option 3: Accent First Letter</div>
+        <div class="description">
+          First letter emphasized with larger size and orange color. Subtle, sophisticated approach.
+        </div>
+      </div>
+
+      <!-- Option 4: Decorative with Emoji -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <span class="decorative">FoodRush</span>
+        </div>
+        <div class="label">Option 4: Gradient + Icon</div>
+        <div class="description">
+          Gradient text with animated fork emoji before it. Rich visual, maintains emoji charm.
+        </div>
+      </div>
+
+      <!-- Option 5: Icon + Accent -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <div class="bold-accent">
+            <span class="emoji">🍽️</span>
+            <span>FoodRush</span>
+          </div>
+        </div>
+        <div class="label">Option 5: Icon with Gradient Text</div>
+        <div class="description">
+          Larger icon with pulsing animation + gradient text. Bold and dynamic, great for desktop.
+        </div>
+      </div>
+
+      <!-- Option 6: Animated Gradient -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <span class="featured">FoodRush</span>
+        </div>
+        <div class="label">Option 6: Shimmering Gradient</div>
+        <div class="description">
+          Bold, extra-large with animated gradient flow. Premium feel, very eye-catching on desktop.
+        </div>
+      </div>
+
+      <!-- Option 7: Fancy Layout -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <div class="fancy">
+            <div class="fancy-icon">🍽️</div>
+            <div class="fancy-text">Food<span>Rush</span></div>
+          </div>
+        </div>
+        <div class="label">Option 7: Stacked Icon + Two-Tone</div>
+        <div class="description">
+          Icon on left, text split into two colors. Playful, modern, desktop-friendly layout.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 50px; padding: 20px; background: #fff9f5; border-radius: 8px; color: #666;">
+      <p><strong>Note:</strong> These are desktop mockups. Mobile will show a simpler version (just emoji + text on a single line in header).</p>
+    </div>
+  </div>
+
+  <script>
+    function select(card) {
+      document.querySelectorAll('.design-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+  </script>
+</body>
+</html>

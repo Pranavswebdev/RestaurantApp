@@ -1,25 +1,219 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@theme {
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --color-primary: #FF6B35;
+  --color-primary-dark: #E85A24;
+  --color-accent: #F7931E;
+  --color-primary-light: #FFF5F0;
+  --color-surface: #FFFBF8;
+  --color-ink: #1A1A1A;
+  --color-meta: #FF8C42;
+  --color-body: #666666;
+  --color-line: #E8E8E8;
+  --color-veg: #2ECC71;
+  --color-nonveg: #E74C3C;
+  --color-success: #27AE60;
+
+  /* Legacy aliases mapped to the warm palette */
+  --color-saffron: #FF6B35;
+  --color-saffron-dark: #E85A24;
+  --color-cream: #FFF5F0;
+  --color-paper: #FFFBF8;
+  --color-muted: #9A8C82;
+  --color-ember: #E74C3C;
+
+  /* Restaurant card gradients */
+  --grad-pizza: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+  --grad-burger: linear-gradient(135deg, #FFB347 0%, #FFAA52 100%);
+  --grad-healthy: linear-gradient(135deg, #6BCB77 0%, #4D96FF 100%);
+  --grad-indian: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
+  --grad-asian: linear-gradient(135deg, #009FFD 0%, #2A2A72 100%);
 }
 
 html, body, #root {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
-  font-family: system-ui, -apple-system, sans-serif;
 }
 
 body {
-  background: #F5F3FF;
-  color: #1f2937;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
   display: flex;
   flex-direction: column;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop {
+  0% { transform: scale(0.9); } 60% { transform: scale(1.05); } 100% { transform: scale(1); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; } 100% { background-position: 200% 0; }
+}
+
+.animate-rise { animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.animate-fade { animation: fade 0.5s ease both; }
+.animate-pop  { animation: pop 0.25s ease both; }
+
+.skeleton {
+  background: linear-gradient(100deg, #ececec 30%, #f6f6f6 50%, #ececec 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.brand-gradient {
+  background-image: linear-gradient(135deg, #FF6B35, #F7931E);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(255, 107, 53, 0.5); }
+}
+
+.animate-slide-up { animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.animate-slide-down { animation: slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.animate-scale-in { animation: scaleIn 0.5s ease both; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-glow { animation: glow 2s ease-in-out infinite; }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.animate-bob { animation: bob 2.5s ease-in-out infinite; }
+
+.card-shadow { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+.card-hover { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
+
+.font-display { font-family: var(--font-display); }
+.gradient-text { background: linear-gradient(135deg, #FF6B35, #F7931E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* FoodRush Heading Animations */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes float-cap {
+  0%, 100% { transform: translateY(0px) rotate(-5deg); }
+  50% { transform: translateY(-4px) rotate(5deg); }
+}
+
+.animate-pulse-fork {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float-cap {
+  animation: float-cap 3s ease-in-out infinite;
+}
+
+.heading-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fork-emoji {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.text-container {
+  position: relative;
+  display: inline-block;
+}
+
+.brand-text {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chef-hat {
+  position: absolute;
+  top: -16px;
+  right: -8px;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .heading-container {
+    gap: 8px;
+  }
+
+  .fork-emoji {
+    font-size: 28px;
+  }
+
+  .brand-text {
+    font-size: 20px;
+  }
+
+  .chef-hat {
+    font-size: 20px;
+    top: -12px;
+    right: -6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .heading-container {
+    gap: 6px;
+  }
+
+  .fork-emoji {
+    font-size: 24px;
+  }
+
+  .brand-text {
+    font-size: 18px;
+  }
+
+  .chef-hat {
+    font-size: 18px;
+    top: -10px;
+    right: -4px;
+  }
 }

@@ -1,0 +1,2 @@
+[    1874ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ https://fe-static-deploy-j0vv3gahl-webappdevs-projects.vercel.app/assets/index-Dx3TBVMQ.js:229
+[  140626ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:5000/api/v1/restaurants?:0

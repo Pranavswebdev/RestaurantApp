@@ -4,8 +4,21 @@ import useAuthStore from '../stores/authStore';
 import { restaurantService } from '../services/restaurantService';
 import RestaurantCard from '../components/RestaurantCard';
 import CuisineChip from '../components/CuisineChip';
+import BottomNav from '../components/BottomNav';
 
 const CUISINES = ['All', 'Italian', 'Pizza', 'American', 'Burgers', 'Indian', 'Biryani', 'Chinese', 'Healthy', 'Salads', 'Mexican', 'Japanese', 'Sushi', 'Thai', 'Mediterranean', 'Greek', 'Desserts', 'Bakery'];
+
+const OFFERS = [
+  { title: '50% OFF', sub: 'up to ₹100 on first order', code: 'CODE: FRESH50', glyph: '🎉', grad: 'from-orange-500 to-red-500' },
+  { title: 'Free Delivery', sub: 'on orders above ₹199', code: 'NO CODE NEEDED', glyph: '🚚', grad: 'from-green-500 to-teal-500' },
+  { title: '₹125 OFF', sub: 'pay with UPI', code: 'CODE: UPI125', glyph: '💳', grad: 'from-indigo-500 to-purple-500' },
+];
+
+const FEATURES = [
+  { label: 'Fast Delivery', glyph: '⚡' },
+  { label: 'Live Tracking', glyph: '📍' },
+  { label: 'Best Prices', glyph: '💰' },
+];
 
 export default function Home() {
   const navigate = useNavigate();
@@ -21,15 +34,9 @@ export default function Home() {
     try {
       setLoading(true);
       setError(null);
-
       const filters = {};
-      if (selectedCuisine !== 'All') {
-        filters.cuisine = selectedCuisine;
-      }
-      if (searchQuery.trim()) {
-        filters.search = searchQuery.trim();
-      }
-
+      if (selectedCuisine !== 'All') filters.cuisine = selectedCuisine;
+      if (searchQuery.trim()) filters.search = searchQuery.trim();
       const data = await restaurantService.getRestaurants(filters);
       setRestaurants(data);
     } catch (err) {
@@ -41,11 +48,8 @@ export default function Home() {
   }, [selectedCuisine, searchQuery]);
 
   useEffect(() => {
-    const debounceTimer = setTimeout(() => {
-      fetchRestaurants();
-    }, 300);
-
-    return () => clearTimeout(debounceTimer);
+    const t = setTimeout(fetchRestaurants, 300);
+    return () => clearTimeout(t);
   }, [fetchRestaurants]);
 
   const handleLogout = () => {
@@ -53,108 +57,141 @@ export default function Home() {
     navigate('/login');
   };
 
-  const handleCuisineSelect = (cuisine) => {
-    setSelectedCuisine(cuisine);
-  };
-
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
-      <div className="sticky top-0 z-10 bg-white border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex justify-between items-center mb-4">
-            <h1 className="text-3xl font-bold text-gray-900">🍽️ FoodRush</h1>
+    <div className="min-h-screen bg-white pb-24">
+      {/* Header */}
+      <header className="sticky top-0 z-20 border-b border-gray-200 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div className="mx-auto max-w-7xl px-5 py-4">
+          <div className="flex items-center justify-between mb-5">
+            <div className="heading-container">
+              <span className="fork-emoji animate-pulse-fork">🍽️</span>
+              <div className="text-container">
+                <h1 className="brand-text">FoodRush</h1>
+                <span className="chef-hat animate-float-cap">👨‍🍳</span>
+              </div>
+            </div>
             <button
               onClick={handleLogout}
-              className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+              className="px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50 rounded-full transition-colors"
             >
-              Logout
+              Log out
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 mb-4">
-            <input
-              type="text"
-              placeholder="📍 Search location..."
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              disabled
-            />
-            <input
-              type="text"
-              placeholder="🔍 Search restaurant or cuisine..."
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-          </div>
+          <div className="space-y-3">
+            <div className="relative">
+              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
+              <input
+                type="text"
+                placeholder="Search restaurants, dishes…"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full rounded-2xl border-2 border-gray-200 bg-gray-50 py-3 pl-12 pr-4 text-gray-900 font-medium outline-none transition focus:border-orange-400 focus:bg-white"
+              />
+            </div>
 
-          <div className="overflow-x-auto pb-2">
-            <div className="flex gap-2">
-              {CUISINES.map((cuisine) => (
+            <div className="no-scrollbar flex gap-2 overflow-x-auto pb-2">
+              {CUISINES.map((c) => (
                 <CuisineChip
-                  key={cuisine}
-                  label={cuisine}
-                  isSelected={selectedCuisine === cuisine}
-                  onClick={() => handleCuisineSelect(cuisine)}
+                  key={c}
+                  label={c}
+                  isSelected={selectedCuisine === c}
+                  onClick={() => setSelectedCuisine(c)}
                 />
               ))}
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      {/* Hero Section */}
+      <section className="bg-white pt-6 pb-4">
+        <div className="mx-auto max-w-7xl px-5">
+          <h2 className="text-xs font-bold text-orange-600 uppercase tracking-widest mb-1">Welcome to</h2>
+          <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">
+            The neighbourhood, <span className="text-orange-600">delivered hot.</span>
+          </h1>
+        </div>
+      </section>
+
+      {/* Offer banners */}
+      <section className="bg-white pb-4">
+        <div className="no-scrollbar mx-auto flex max-w-7xl gap-3 overflow-x-auto px-5">
+          {OFFERS.map((o) => (
+            <div
+              key={o.title}
+              className={`flex min-w-[260px] items-center gap-3 rounded-2xl bg-gradient-to-br ${o.grad} p-4 text-white shadow-md`}
+            >
+              <span className="text-4xl">{o.glyph}</span>
+              <div>
+                <p className="text-lg font-extrabold leading-tight">{o.title}</p>
+                <p className="text-sm font-medium text-white/90">{o.sub}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-wide text-white/70">{o.code}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Feature highlights */}
+      <section className="bg-white pb-2">
+        <div className="mx-auto grid max-w-7xl grid-cols-3 gap-3 px-5">
+          {FEATURES.map((f) => (
+            <div key={f.label} className="rounded-2xl bg-orange-50 p-3 text-center">
+              <div className="text-2xl">{f.glyph}</div>
+              <p className="mt-1 text-xs font-semibold text-gray-700">{f.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Content */}
+      <main className="mx-auto max-w-6xl px-5 py-7">
         {loading && (
-          <div className="text-center py-12">
-            <p className="text-gray-600">Loading restaurants...</p>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="overflow-hidden rounded-3xl border border-line bg-cream">
+                <div className="skeleton h-44 w-full" />
+                <div className="space-y-3 p-5">
+                  <div className="skeleton h-6 w-2/3 rounded-full" />
+                  <div className="skeleton h-4 w-1/2 rounded-full" />
+                  <div className="skeleton h-4 w-1/3 rounded-full" />
+                </div>
+              </div>
+            ))}
           </div>
         )}
 
         {error && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-            {error}
+          <div className="rounded-2xl border border-ember/30 bg-ember/10 p-5 text-ember">
+            <p className="font-semibold">Couldn’t load restaurants</p>
+            <p className="mt-1 text-sm opacity-80">{error}</p>
           </div>
         )}
 
         {!loading && !error && restaurants.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-600">No restaurants found</p>
+          <div className="flex flex-col items-center py-20 text-center">
+            <span className="text-6xl opacity-60">🍂</span>
+            <p className="mt-4 font-display text-2xl text-ink">Nothing on the menu</p>
+            <p className="mt-1 text-muted">Try a different cuisine or search.</p>
           </div>
         )}
 
         {!loading && !error && restaurants.length > 0 && (
           <>
-            <p className="text-gray-600 mb-6">
-              {restaurants.length} restaurant{restaurants.length !== 1 ? 's' : ''} found
+            <p className="mb-5 text-sm font-medium text-muted">
+              <span className="font-bold text-ink">{restaurants.length}</span> place{restaurants.length !== 1 ? 's' : ''} ready to deliver
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {restaurants.map((restaurant) => (
-                <RestaurantCard key={restaurant._id} restaurant={restaurant} />
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {restaurants.map((r, i) => (
+                <RestaurantCard key={r._id} restaurant={r} index={i} />
               ))}
             </div>
           </>
         )}
-      </div>
+      </main>
 
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex gap-4">
-          <button className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-indigo-500 font-semibold">
-            🏠 Home
-          </button>
-          <button className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-gray-500 font-semibold hover:text-indigo-500">
-            🛒 Cart
-          </button>
-          <button className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-gray-500 font-semibold hover:text-indigo-500">
-            📦 Orders
-          </button>
-          <button className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-gray-500 font-semibold hover:text-indigo-500">
-            👤 Profile
-          </button>
-        </div>
-      </div>
+      <BottomNav active="home" />
     </div>
   );
 }

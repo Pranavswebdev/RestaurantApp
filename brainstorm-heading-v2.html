@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodRush Heading with Chef Cap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { margin-bottom: 10px; color: #333; font-size: 28px; }
+    .intro { color: #666; margin-bottom: 40px; font-size: 16px; }
+    .designs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .design-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 3px solid #e0e0e0;
+    }
+    .design-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .design-card.selected {
+      border-color: #FF6B35;
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+    .preview {
+      background: white;
+      padding: 40px;
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .label {
+      padding: 12px 16px;
+      background: #f9f9f9;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #FF6B35;
+    }
+    .description {
+      padding: 16px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* Chef Cap Variants */
+    .with-cap-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .bold-accent {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .bold-accent .emoji {
+      font-size: 36px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .bold-accent span {
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+    }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+    /* Chef Cap Position Variants */
+    .cap-top-right {
+      position: relative;
+      display: inline-block;
+    }
+    .cap-top-right .chef {
+      position: absolute;
+      top: -16px;
+      right: -8px;
+      font-size: 28px;
+      animation: float-cap 3s ease-in-out infinite;
+    }
+    @keyframes float-cap {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-4px) rotate(5deg); }
+    }
+
+    .cap-top-left {
+      position: relative;
+      display: inline-block;
+    }
+    .cap-top-left .chef {
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      font-size: 28px;
+      animation: float-cap-left 3s ease-in-out infinite;
+    }
+    @keyframes float-cap-left {
+      0%, 100% { transform: translateY(0) rotate(5deg); }
+      50% { transform: translateY(-4px) rotate(-5deg); }
+    }
+
+    .cap-floating {
+      position: relative;
+      display: inline-block;
+    }
+    .cap-floating .chef {
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      font-size: 32px;
+      animation: float-high 3s ease-in-out infinite;
+    }
+    @keyframes float-high {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .cap-integrated {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cap-integrated .chef {
+      font-size: 32px;
+      animation: bob-cap 2.5s ease-in-out infinite;
+    }
+    @keyframes bob-cap {
+      0%, 100% { transform: translateY(0) scaleX(1); }
+      50% { transform: translateY(-6px) scaleX(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Chef Cap Position Variants</h1>
+    <p class="intro">Pick which position you like best for the chef cap. Each has different visual weight and personality.</p>
+
+    <div class="designs">
+      <!-- Option 1: Cap Top Right -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <div class="bold-accent">
+            <span class="emoji">🍽️</span>
+            <div class="cap-top-right">
+              <span>FoodRush</span>
+              <span class="chef">👨‍🍳</span>
+            </div>
+          </div>
+        </div>
+        <div class="label">Variant A: Cap Top Right</div>
+        <div class="description">
+          Chef hat floats above the top-right corner. Playful, slightly rotates. Classic placement.
+        </div>
+      </div>
+
+      <!-- Option 2: Cap Top Left -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <div class="bold-accent">
+            <span class="emoji">🍽️</span>
+            <div class="cap-top-left">
+              <span>FoodRush</span>
+              <span class="chef">👨‍🍳</span>
+            </div>
+          </div>
+        </div>
+        <div class="label">Variant B: Cap Top Left</div>
+        <div class="description">
+          Chef hat on the left side, tilts and floats. Mirrors the fork emoji position.
+        </div>
+      </div>
+
+      <!-- Option 3: Cap Floating Higher -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <div class="bold-accent">
+            <span class="emoji">🍽️</span>
+            <div class="cap-floating">
+              <span>FoodRush</span>
+              <span class="chef">👨‍🍳</span>
+            </div>
+          </div>
+        </div>
+        <div class="label">Variant C: Floating High</div>
+        <div class="description">
+          Chef hat floats higher and more prominently. Bold, takes up more visual space.
+        </div>
+      </div>
+
+      <!-- Option 4: Cap Integrated -->
+      <div class="design-card" onclick="select(this)">
+        <div class="preview">
+          <div class="bold-accent">
+            <span class="emoji">🍽️</span>
+            <div class="cap-integrated">
+              <span class="chef">👨‍🍳</span>
+              <span>FoodRush</span>
+            </div>
+          </div>
+        </div>
+        <div class="label">Variant D: Integrated (Before Text)</div>
+        <div class="description">
+          Chef hat sits inline before the text. Integrated, no floating. Clean, compact.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 50px; padding: 20px; background: #fff9f5; border-radius: 8px; color: #666;">
+      <p><strong>Desktop:</strong> Full icon + gradient text + chef cap animation</p>
+      <p style="margin-top: 8px;"><strong>Mobile:</strong> All elements scale down proportionally on smaller screens, staying on one line until very small screens.</p>
+    </div>
+  </div>
+
+  <script>
+    function select(card) {
+      document.querySelectorAll('.design-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+  </script>
+</body>
+</html>

@@ -32,36 +32,35 @@ describe('MenuItemCard', () => {
     expect(screen.getByText('₹299')).toBeInTheDocument();
   });
 
-  it('shows + button to add item', () => {
+  it('shows ADD button when item not in cart', () => {
     render(<MenuItemCard item={mockItem} />);
-    expect(screen.getByText('+')).toBeInTheDocument();
+    expect(screen.getByTestId('add-item-1')).toHaveTextContent('ADD');
   });
 
   it('shows quantity after adding item', () => {
     render(<MenuItemCard item={mockItem} />);
-    fireEvent.click(screen.getByText('+'));
-    expect(screen.getByText('1')).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('add-item-1'));
+    expect(screen.getByTestId('qty-item-1')).toHaveTextContent('1');
   });
 
   it('increments quantity when + is clicked multiple times', () => {
     render(<MenuItemCard item={mockItem} />);
-    fireEvent.click(screen.getByText('+'));
-    fireEvent.click(screen.getByText('+'));
-    fireEvent.click(screen.getByText('+'));
-    expect(screen.getByText('3')).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('add-item-1')); // ADD -> qty 1
+    fireEvent.click(screen.getByTestId('add-item-1')); // + -> qty 2
+    fireEvent.click(screen.getByTestId('add-item-1')); // + -> qty 3
+    expect(screen.getByTestId('qty-item-1')).toHaveTextContent('3');
   });
 
   it('decrements quantity when - is clicked', () => {
     render(<MenuItemCard item={mockItem} />);
-    fireEvent.click(screen.getByText('+'));
-    fireEvent.click(screen.getByText('+'));
-    fireEvent.click(screen.getByText('−'));
-    expect(screen.getByText('1')).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('add-item-1')); // qty 1
+    fireEvent.click(screen.getByTestId('add-item-1')); // qty 2
+    fireEvent.click(screen.getByTestId('remove-item-1')); // qty 1
+    expect(screen.getByTestId('qty-item-1')).toHaveTextContent('1');
   });
 
-  it('shows "Out of Stock" when item is unavailable', () => {
-    const unavailableItem = { ...mockItem, isAvailable: false };
-    render(<MenuItemCard item={unavailableItem} />);
-    expect(screen.getByText('Out of Stock')).toBeInTheDocument();
+  it('shows out of stock when item is unavailable', () => {
+    render(<MenuItemCard item={{ ...mockItem, isAvailable: false }} />);
+    expect(screen.getByText('Out of stock')).toBeInTheDocument();
   });
 });

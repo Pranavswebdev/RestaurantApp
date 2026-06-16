@@ -1,0 +1,223 @@
+- generic [ref=e22]:
+  - banner [ref=e23]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: 🍽️
+          - generic [ref=e28]: FoodRush
+        - button "Log out" [ref=e29]
+      - generic [ref=e30]:
+        - generic: 🔍
+        - textbox "Search dishes, cuisines, restaurants…" [ref=e31]
+      - generic [ref=e32]:
+        - button "All" [ref=e33]
+        - button "Italian" [ref=e34]
+        - button "Pizza" [ref=e35]
+        - button "American" [ref=e36]
+        - button "Burgers" [ref=e37]
+        - button "Indian" [ref=e38]
+        - button "Biryani" [ref=e39]
+        - button "Chinese" [ref=e40]
+        - button "Healthy" [ref=e41]
+        - button "Salads" [ref=e42]
+        - button "Mexican" [ref=e43]
+        - button "Japanese" [ref=e44]
+        - button "Sushi" [ref=e45]
+        - button "Thai" [ref=e46]
+        - button "Mediterranean" [ref=e47]
+        - button "Greek" [ref=e48]
+        - button "Desserts" [ref=e49]
+        - button "Bakery" [ref=e50]
+  - generic [ref=e51]:
+    - paragraph [ref=e52]: Hungry?
+    - heading "The neighbourhood, delivered hot." [level=1] [ref=e53]:
+      - text: The neighbourhood,
+      - text: delivered hot.
+  - main [ref=e54]:
+    - paragraph [ref=e55]: 10 places ready to deliver
+    - generic [ref=e56]:
+      - article [ref=e57] [cursor=pointer]:
+        - generic [ref=e58]:
+          - generic [ref=e60]: 🍝
+          - generic [ref=e61]:
+            - generic [ref=e62]: ★
+            - generic [ref=e63]: "4.5"
+        - generic [ref=e64]:
+          - heading "Pizza Paradise" [level=3] [ref=e65]
+          - paragraph [ref=e66]: Italian · Pizza
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]: ⏱
+              - text: 25 min
+            - generic [ref=e71]: ₹200 min order
+          - generic [ref=e72]:
+            - generic [ref=e73]: Delivery ₹50
+            - generic [ref=e74]: View menu →
+      - article [ref=e75] [cursor=pointer]:
+        - generic [ref=e76]:
+          - generic [ref=e78]: 🍔
+          - generic [ref=e79]:
+            - generic [ref=e80]: ★
+            - generic [ref=e81]: "4.3"
+        - generic [ref=e82]:
+          - heading "Burger Barn" [level=3] [ref=e83]
+          - paragraph [ref=e84]: American · Burgers
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - generic [ref=e87]: ⏱
+              - text: 20 min
+            - generic [ref=e89]: ₹150 min order
+          - generic [ref=e90]:
+            - generic [ref=e91]: Delivery ₹40
+            - generic [ref=e92]: View menu →
+      - article [ref=e93] [cursor=pointer]:
+        - generic [ref=e94]:
+          - generic [ref=e96]: 🍛
+          - generic [ref=e97]:
+            - generic [ref=e98]: ★
+            - generic [ref=e99]: "4.7"
+        - generic [ref=e100]:
+          - heading "Biryani House" [level=3] [ref=e101]
+          - paragraph [ref=e102]: Indian · Biryani
+          - generic [ref=e103]:
+            - generic [ref=e104]:
+              - generic [ref=e105]: ⏱
+              - text: 35 min
+            - generic [ref=e107]: ₹250 min order
+          - generic [ref=e108]:
+            - generic [ref=e109]: Delivery ₹60
+            - generic [ref=e110]: View menu →
+      - article [ref=e111] [cursor=pointer]:
+        - generic [ref=e112]:
+          - generic [ref=e114]: 🥡
+          - generic [ref=e115]:
+            - generic [ref=e116]: ★
+            - generic [ref=e117]: "4.4"
+        - generic [ref=e118]:
+          - heading "Dragon Wok" [level=3] [ref=e119]
+          - paragraph [ref=e120]: Chinese
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - generic [ref=e123]: ⏱
+              - text: 28 min
+            - generic [ref=e125]: ₹180 min order
+          - generic [ref=e126]:
+            - generic [ref=e127]: Delivery ₹45
+            - generic [ref=e128]: View menu →
+      - article [ref=e129] [cursor=pointer]:
+        - generic [ref=e130]:
+          - generic [ref=e132]: 🥗
+          - generic [ref=e133]:
+            - generic [ref=e134]: ★
+            - generic [ref=e135]: "4.6"
+          - generic [ref=e137]: Closed
+        - generic [ref=e138]:
+          - heading "Healthy Bowl" [level=3] [ref=e139]
+          - paragraph [ref=e140]: Healthy · Salads
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - generic [ref=e143]: ⏱
+              - text: 22 min
+            - generic [ref=e145]: ₹200 min order
+          - generic [ref=e146]:
+            - generic [ref=e147]: Delivery ₹40
+            - generic [ref=e148]: View menu →
+      - article [ref=e149] [cursor=pointer]:
+        - generic [ref=e150]:
+          - generic [ref=e152]: 🌮
+          - generic [ref=e153]:
+            - generic [ref=e154]: ★
+            - generic [ref=e155]: "4.2"
+        - generic [ref=e156]:
+          - heading "Taco Fiesta" [level=3] [ref=e157]
+          - paragraph [ref=e158]: Mexican
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - generic [ref=e161]: ⏱
+              - text: 25 min
+            - generic [ref=e163]: ₹200 min order
+          - generic [ref=e164]:
+            - generic [ref=e165]: Delivery ₹45
+            - generic [ref=e166]: View menu →
+      - article [ref=e167] [cursor=pointer]:
+        - generic [ref=e168]:
+          - generic [ref=e170]: 🍣
+          - generic [ref=e171]:
+            - generic [ref=e172]: ★
+            - generic [ref=e173]: "4.8"
+        - generic [ref=e174]:
+          - heading "Sushi Sensations" [level=3] [ref=e175]
+          - paragraph [ref=e176]: Japanese · Sushi
+          - generic [ref=e177]:
+            - generic [ref=e178]:
+              - generic [ref=e179]: ⏱
+              - text: 30 min
+            - generic [ref=e181]: ₹300 min order
+          - generic [ref=e182]:
+            - generic [ref=e183]: Delivery ₹60
+            - generic [ref=e184]: View menu →
+      - article [ref=e185] [cursor=pointer]:
+        - generic [ref=e186]:
+          - generic [ref=e188]: 🍰
+          - generic [ref=e189]:
+            - generic [ref=e190]: ★
+            - generic [ref=e191]: "4.9"
+        - generic [ref=e192]:
+          - heading "Dessert Delight" [level=3] [ref=e193]
+          - paragraph [ref=e194]: Desserts · Bakery
+          - generic [ref=e195]:
+            - generic [ref=e196]:
+              - generic [ref=e197]: ⏱
+              - text: 20 min
+            - generic [ref=e199]: ₹150 min order
+          - generic [ref=e200]:
+            - generic [ref=e201]: Delivery ₹30
+            - generic [ref=e202]: View menu →
+      - article [ref=e203] [cursor=pointer]:
+        - generic [ref=e204]:
+          - generic [ref=e206]: 🍜
+          - generic [ref=e207]:
+            - generic [ref=e208]: ★
+            - generic [ref=e209]: "4.5"
+        - generic [ref=e210]:
+          - heading "Thai Spice" [level=3] [ref=e211]
+          - paragraph [ref=e212]: Thai
+          - generic [ref=e213]:
+            - generic [ref=e214]:
+              - generic [ref=e215]: ⏱
+              - text: 32 min
+            - generic [ref=e217]: ₹220 min order
+          - generic [ref=e218]:
+            - generic [ref=e219]: Delivery ₹55
+            - generic [ref=e220]: View menu →
+      - article [ref=e221] [cursor=pointer]:
+        - generic [ref=e222]:
+          - generic [ref=e224]: 🥙
+          - generic [ref=e225]:
+            - generic [ref=e226]: ★
+            - generic [ref=e227]: "4.4"
+        - generic [ref=e228]:
+          - heading "Mediterranean Grill" [level=3] [ref=e229]
+          - paragraph [ref=e230]: Mediterranean · Greek
+          - generic [ref=e231]:
+            - generic [ref=e232]:
+              - generic [ref=e233]: ⏱
+              - text: 28 min
+            - generic [ref=e235]: ₹200 min order
+          - generic [ref=e236]:
+            - generic [ref=e237]: Delivery ₹50
+            - generic [ref=e238]: View menu →
+  - navigation [ref=e239]:
+    - generic [ref=e240]:
+      - button "🏠 Home" [ref=e241]:
+        - generic [ref=e242]: 🏠
+        - text: Home
+      - button "🛒 Cart" [ref=e243]:
+        - generic [ref=e244]: 🛒
+        - text: Cart
+      - button "🧾 Orders" [ref=e245]:
+        - generic [ref=e246]: 🧾
+        - text: Orders
+      - button "👤 Profile" [ref=e247]:
+        - generic [ref=e248]: 👤
+        - text: Profile

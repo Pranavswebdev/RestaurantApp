@@ -298,6 +298,240 @@ const restaurants = [
       },
     ],
   },
+  {
+    name: 'La Pasta Cucina',
+    image: 'https://via.placeholder.com/300?text=La+Pasta',
+    rating: 4.6,
+    deliveryTime: 27,
+    deliveryCharge: 0,
+    minOrder: 250,
+    cuisines: ['Italian', 'Pasta'],
+    isOpen: true,
+    categories: [
+      {
+        id: 'pasta',
+        name: 'Pasta',
+        items: [
+          { id: 'lp1', name: 'Spaghetti Carbonara', description: 'Creamy egg & bacon', price: 329, isVeg: false, isAvailable: true },
+          { id: 'lp2', name: 'Penne Arrabbiata', description: 'Spicy tomato penne', price: 279, isVeg: true, isAvailable: true },
+          { id: 'lp3', name: 'Fettuccine Alfredo', description: 'Rich parmesan cream', price: 309, isVeg: true, isAvailable: true },
+          { id: 'lp4', name: 'Lasagna Bolognese', description: 'Layered meat lasagna', price: 359, isVeg: false, isAvailable: true },
+        ],
+      },
+      {
+        id: 'starters',
+        name: 'Starters',
+        items: [
+          { id: 'lp5', name: 'Bruschetta', description: 'Tomato & basil toast', price: 169, isVeg: true, isAvailable: true },
+          { id: 'lp6', name: 'Minestrone Soup', description: 'Hearty vegetable soup', price: 149, isVeg: true, isAvailable: true },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Smash & Grill',
+    image: 'https://via.placeholder.com/300?text=Smash+Grill',
+    rating: 4.1,
+    deliveryTime: 18,
+    deliveryCharge: 40,
+    minOrder: 150,
+    cuisines: ['American', 'Burgers'],
+    isOpen: true,
+    categories: [
+      {
+        id: 'burgers',
+        name: 'Smash Burgers',
+        items: [
+          { id: 'sg1', name: 'Classic Smash', description: 'Double smashed patty', price: 269, isVeg: false, isAvailable: true },
+          { id: 'sg2', name: 'Paneer Smash', description: 'Grilled paneer patty', price: 229, isVeg: true, isAvailable: true },
+          { id: 'sg3', name: 'BBQ Bacon Smash', description: 'Bacon & BBQ glaze', price: 329, isVeg: false, isAvailable: true },
+        ],
+      },
+      {
+        id: 'wings',
+        name: 'Wings & Fries',
+        items: [
+          { id: 'sg4', name: 'Buffalo Wings', description: 'Spicy chicken wings', price: 279, isVeg: false, isAvailable: true },
+          { id: 'sg5', name: 'Loaded Fries', description: 'Cheese & jalapeno', price: 189, isVeg: true, isAvailable: true },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Tandoori Nights',
+    image: 'https://via.placeholder.com/300?text=Tandoori+Nights',
+    rating: 4.7,
+    deliveryTime: 33,
+    deliveryCharge: 50,
+    minOrder: 250,
+    cuisines: ['Indian', 'Mughlai'],
+    isOpen: true,
+    categories: [
+      {
+        id: 'tandoor',
+        name: 'From the Tandoor',
+        items: [
+          { id: 'tn1', name: 'Paneer Tikka', description: 'Char-grilled cottage cheese', price: 269, isVeg: true, isAvailable: true },
+          { id: 'tn2', name: 'Chicken Tikka', description: 'Smoky marinated chicken', price: 319, isVeg: false, isAvailable: true },
+          { id: 'tn3', name: 'Tandoori Roti', description: 'Whole wheat flatbread', price: 39, isVeg: true, isAvailable: true },
+        ],
+      },
+      {
+        id: 'curries',
+        name: 'Signature Curries',
+        items: [
+          { id: 'tn4', name: 'Butter Chicken', description: 'Creamy tomato gravy', price: 329, isVeg: false, isAvailable: true },
+          { id: 'tn5', name: 'Paneer Butter Masala', description: 'Rich makhani gravy', price: 289, isVeg: true, isAvailable: true },
+          { id: 'tn6', name: 'Dal Tadka', description: 'Tempered yellow lentils', price: 199, isVeg: true, isAvailable: true },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Green Garden Cafe',
+    image: 'https://via.placeholder.com/300?text=Green+Garden',
+    rating: 4.5,
+    deliveryTime: 24,
+    deliveryCharge: 0,
+    minOrder: 200,
+    cuisines: ['Healthy', 'Salads'],
+    isOpen: true,
+    categories: [
+      {
+        id: 'salads',
+        name: 'Garden Salads',
+        items: [
+          { id: 'gg1', name: 'Greek Salad', description: 'Feta, olives & cucumber', price: 219, isVeg: true, isAvailable: true },
+          { id: 'gg2', name: 'Avocado Bowl', description: 'Avocado, quinoa & greens', price: 289, isVeg: true, isAvailable: true },
+          { id: 'gg3', name: 'Caesar Salad', description: 'Classic veg caesar', price: 199, isVeg: true, isAvailable: true },
+        ],
+      },
+      {
+        id: 'juices',
+        name: 'Cold Pressed Juices',
+        items: [
+          { id: 'gg4', name: 'Green Detox', description: 'Spinach, apple & mint', price: 149, isVeg: true, isAvailable: true },
+          { id: 'gg5', name: 'Orange Sunrise', description: 'Fresh orange & carrot', price: 139, isVeg: true, isAvailable: true },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Wok & Roll',
+    image: 'https://via.placeholder.com/300?text=Wok+Roll',
+    rating: 4.3,
+    deliveryTime: 29,
+    deliveryCharge: 45,
+    minOrder: 180,
+    cuisines: ['Chinese', 'Thai'],
+    isOpen: true,
+    categories: [
+      {
+        id: 'mains',
+        name: 'Wok Mains',
+        items: [
+          { id: 'wr1', name: 'Kung Pao Chicken', description: 'Spicy peanut stir-fry', price: 289, isVeg: false, isAvailable: true },
+          { id: 'wr2', name: 'Chilli Paneer', description: 'Indo-Chinese paneer', price: 249, isVeg: true, isAvailable: true },
+          { id: 'wr3', name: 'Pad Thai Noodles', description: 'Tamarind rice noodles', price: 259, isVeg: true, isAvailable: true },
+        ],
+      },
+      {
+        id: 'dimsum',
+        name: 'Dim Sum',
+        items: [
+          { id: 'wr4', name: 'Veg Momos', description: 'Steamed dumplings', price: 159, isVeg: true, isAvailable: true },
+          { id: 'wr5', name: 'Chicken Dim Sum', description: 'Juicy chicken parcels', price: 199, isVeg: false, isAvailable: true },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Sweet Tooth Bakery',
+    image: 'https://via.placeholder.com/300?text=Sweet+Tooth',
+    rating: 4.8,
+    deliveryTime: 21,
+    deliveryCharge: 30,
+    minOrder: 120,
+    cuisines: ['Desserts', 'Bakery'],
+    isOpen: true,
+    categories: [
+      {
+        id: 'pastries',
+        name: 'Pastries & Cakes',
+        items: [
+          { id: 'st1', name: 'Red Velvet Pastry', description: 'Cream cheese frosting', price: 149, isVeg: true, isAvailable: true },
+          { id: 'st2', name: 'Chocolate Croissant', description: 'Buttery & flaky', price: 119, isVeg: true, isAvailable: true },
+          { id: 'st3', name: 'Tiramisu Cup', description: 'Coffee mascarpone', price: 199, isVeg: true, isAvailable: true },
+        ],
+      },
+      {
+        id: 'cookies',
+        name: 'Cookies & Brownies',
+        items: [
+          { id: 'st4', name: 'Fudgy Brownie', description: 'Rich dark chocolate', price: 99, isVeg: true, isAvailable: true },
+          { id: 'st5', name: 'Choc Chip Cookies', description: 'Pack of 4', price: 129, isVeg: true, isAvailable: true },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'El Mexicano',
+    image: 'https://via.placeholder.com/300?text=El+Mexicano',
+    rating: 4.2,
+    deliveryTime: 26,
+    deliveryCharge: 45,
+    minOrder: 200,
+    cuisines: ['Mexican'],
+    isOpen: true,
+    categories: [
+      {
+        id: 'mains',
+        name: 'Burritos & Quesadillas',
+        items: [
+          { id: 'em1', name: 'Chicken Burrito', description: 'Loaded rice & beans', price: 289, isVeg: false, isAvailable: true },
+          { id: 'em2', name: 'Veg Quesadilla', description: 'Cheesy grilled tortilla', price: 239, isVeg: true, isAvailable: true },
+          { id: 'em3', name: 'Nachos Grande', description: 'Cheese, salsa & jalapeno', price: 219, isVeg: true, isAvailable: true },
+        ],
+      },
+      {
+        id: 'tacos',
+        name: 'Street Tacos',
+        items: [
+          { id: 'em4', name: 'Fish Tacos', description: 'Crispy fish & slaw', price: 269, isVeg: false, isAvailable: true },
+          { id: 'em5', name: 'Paneer Tacos', description: 'Spiced paneer', price: 229, isVeg: true, isAvailable: true },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Ramen Republic',
+    image: 'https://via.placeholder.com/300?text=Ramen+Republic',
+    rating: 4.6,
+    deliveryTime: 31,
+    deliveryCharge: 55,
+    minOrder: 250,
+    cuisines: ['Japanese', 'Chinese'],
+    isOpen: true,
+    categories: [
+      {
+        id: 'ramen',
+        name: 'Ramen Bowls',
+        items: [
+          { id: 'rr1', name: 'Shoyu Ramen', description: 'Soy-based broth', price: 329, isVeg: false, isAvailable: true },
+          { id: 'rr2', name: 'Veg Miso Ramen', description: 'Miso & tofu', price: 289, isVeg: true, isAvailable: true },
+          { id: 'rr3', name: 'Spicy Chicken Ramen', description: 'Chilli broth', price: 349, isVeg: false, isAvailable: true },
+        ],
+      },
+      {
+        id: 'sides',
+        name: 'Small Plates',
+        items: [
+          { id: 'rr4', name: 'Edamame', description: 'Steamed & salted', price: 149, isVeg: true, isAvailable: true },
+          { id: 'rr5', name: 'Gyoza', description: 'Pan-fried dumplings', price: 199, isVeg: false, isAvailable: true },
+        ],
+      },
+    ],
+  },
 ];
 
 const seed = async () => {
@@ -321,4 +555,8 @@ const seed = async () => {
   }
 };
 
-seed();
+module.exports = { restaurants, seed };
+
+if (require.main === module) {
+  seed();
+}
